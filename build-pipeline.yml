@@ -24,9 +24,10 @@ jobs:
       - name: Run lint css
         run: npm run lint:css
       - name: "print env variable"
-        run: echo "Hello $NAME"
+        run: echo "Hello $NAME, pass $SECRET"
         env:
           NAME: Sondre
+          SECRET: ${{secrets.PASSWORD}}
       # Step 3 - Add tests and linting here
   deploy:
     needs: build
